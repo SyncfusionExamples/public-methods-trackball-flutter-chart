@@ -21,15 +21,15 @@ class ChartApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   // ignore: prefer_const_constructors_in_immutables
-  MyHomePage({Key key}) : super(key: key);
+  MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  SfCartesianChart chart;
-  TrackballBehavior trackball;
+  late SfCartesianChart chart;
+  late TrackballBehavior trackball;
 
   @override
   Widget build(BuildContext context) {
@@ -58,8 +58,10 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(title: Text('Trackball')),
         body: Container(
             child: Column(children: <Widget>[
-          FlatButton(
-            color: Theme.of(context).primaryColor,
+          TextButton(
+            style: TextButton.styleFrom(
+              primary: Theme.of(context).primaryColor
+            ),
             child: Text('Show'),
             onPressed: show,
           ),
