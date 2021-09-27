@@ -61,8 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(title: Text('Trackball')),
         body: Container(
             child: Column(children: <Widget>[
-          FlatButton(
-            color: Theme.of(context).primaryColor,
+          TextButton(
+            style: TextButton.styleFrom(
+              primary: Theme.of(context).primaryColor
+            ),
             child: Text('Show'),
             onPressed: show,
           ),
