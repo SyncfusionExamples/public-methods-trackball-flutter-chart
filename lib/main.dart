@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_core/core.dart';
 
 void main() {
-  // Register your license here
-  SyncfusionLicense.registerLicense(null);
   return runApp(ChartApp());
 }
 
@@ -29,7 +26,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   late SfCartesianChart chart;
-  late TrackballBehavior trackball;
+  late TrackballBehavior _trackballBehavior;
+
+  @override
+  void initState() {
+    _trackballBehavior = TrackballBehavior(
+        enable: true, activationMode: ActivationMode.singleTap);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,12 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ChartData(50, 28)
 // Add the required data
     ];
-    trackball = TrackballBehavior(
-        enable: true, activationMode: ActivationMode.singleTap);
+
     chart = SfCartesianChart(
         backgroundColor: Colors.white,
         primaryXAxis: NumericAxis(interval: 10),
-        trackballBehavior: trackball,
+        trackballBehavior: _trackballBehavior,
         series: <CartesianSeries>[
           LineSeries<ChartData, double>(
               enableTooltip: true,
@@ -72,11 +75,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void show() {
-    trackball.showByIndex(1);
+    _trackballBehavior.showByIndex(1);
   }
 
   void hide() {
-    trackball.hide();
+    _trackballBehavior.hide();
   }
 }
 
