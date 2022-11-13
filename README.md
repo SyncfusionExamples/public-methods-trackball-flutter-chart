@@ -1,6 +1,10 @@
 # public-methods-trackball-flutter-chart
 
-A quick-start example to help you add the Syncfusion Flutter Charts package to a Flutter app. You will learn how to add a Cartesian chart to a Flutter project. You will then learn how to show/hide the trackball in Flutter Cartesian chart using the public methods.
+A quick-start example to help you add the Syncfusion Flutter Charts package to a Flutter app. You will learn how to add a Cartesian chart to a Flutter project. You will then learn how to show/hide the trackball in Flutter Cartesian chart using the public methods. Flutter Cartesian chart widget provides support for showing or hiding the trackball dynamically using the public methods. Public methods are methods that can be called by using the class object where they are defined. Likewise, chart widget also has some public methods to show or hide the trackball dynamically such as.
+
+* show
+* showByIndex
+* hide
 
 Documentation: https://help.syncfusion.com/flutter/cartesian-charts/methods#methods-in-trackballbehavior 
 
