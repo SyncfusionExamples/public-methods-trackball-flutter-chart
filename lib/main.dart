@@ -63,8 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(children: <Widget>[
           TextButton(
             style: TextButton.styleFrom(
-              primary: Theme.of(context).primaryColor
-            ),
+                foregroundColor: Theme.of(context).primaryColor),
             child: Text('Show'),
             onPressed: show,
           ),
